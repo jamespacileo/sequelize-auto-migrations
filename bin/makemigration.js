@@ -9,6 +9,10 @@ const fs                = require("fs");
 const path              = require("path");
 const _                 = require("lodash");
 
+if(!process.env.PWD){
+    process.env.PWD = process.cwd();
+}
+
 const optionDefinitions = [
     { name: 'preview', alias: 'p', type: Boolean, description: 'Show migration preview (does not change any files)' },
     { name: 'name', alias: 'n', type: String, description: 'Set migration name (default: "noname")',},
